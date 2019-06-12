@@ -24,24 +24,21 @@ def testString(inS):
                 if id == stack[len(stack)-1]:
                     stack.pop()  # just remove it and continue
                 else:
-                    return 0
+                    return False
             else:
-                return 0
+                return False
         else:
             # it's an openning char just push it to the stack
             stack.append(checkType(c, 'o'))
     if (len(stack) > 0):
-        return 0
-    return 1
+        return False
+    return True
 
 
 # let's try it
 def check(s):
     print("test for "+s)
-    if testString(s) == 1:
-        print("True")
-    else:
-        print("False")
+    print(testString(s))
 
 
 check("({([])})()")
