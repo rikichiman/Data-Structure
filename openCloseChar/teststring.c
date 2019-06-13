@@ -73,10 +73,12 @@ int testString(char *inS)
 }
 int main(void)
 {
-    int s;
-    if (testString("({([])}){}["))
+    if (testString("({([])}){}"))
         printf("True");
     else
         printf("False");
-    return 1;
+
+    printf("\n I am speed");
+
+    return 0;
 }
