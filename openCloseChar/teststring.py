@@ -1,3 +1,4 @@
+import Queue as queue
 # define a dictionary
 # type o: open  c: close
 Bchar = ({"c": '(', "id": 1, "type": 'o'},
@@ -16,22 +17,28 @@ def checkType(c, t):
 
 
 def testString(inS):
-    stack = []  # contains all the IDs
+    # stack = []  # contains all the IDs
+    bStack = queue.LifoQueue()  # contains all the IDs
     for c in inS:
         id = checkType(c, 'c')
         if (id != 0):  # it's a closing char
-            if len(stack) != 0:
-                if id == stack[len(stack)-1]:
-                    stack.pop()  # just remove it and continue
+            if not bStack.empty():
+                if id == bStack.get():
+                    # stack.pop()
+                      # just remove it and continue
+                    continue
                 else:
                     return False
             else:
                 return False
         else:
             # it's an openning char just push it to the stack
-            stack.append(checkType(c, 'o'))
-    if (len(stack) > 0):
+            #stack.append(checkType(c, 'o'))
+            bStack.put(checkType(c, 'o'))
+    if (not bStack.empty()):
         return False
+    # if (len(stack) > 0):
+    #    return False
     return True
 
 
