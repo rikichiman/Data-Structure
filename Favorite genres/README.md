@@ -1,5 +1,5 @@
 # Find Favorite genres by user
-is a small program made in Python, for a given list of user (dictionnary), to find the favorite genres of each of them.
+This is a small program made in Python, for a given list of user (dictionnary), to find the favorite genres for each of them.
 
 # Example
 
