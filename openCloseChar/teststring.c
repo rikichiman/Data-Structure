@@ -5,7 +5,7 @@
 typedef struct
 {
     char c;
-    int found;
+    //int found;
     int id;
     char type; // 'o' open  - 'c' close
 } schar;
